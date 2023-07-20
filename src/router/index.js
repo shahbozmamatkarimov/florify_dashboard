@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { AdminView, AdminDashboardView, AdminInboxView, AdminProfileView, BillingView, LoginView, RegisterView, Settings } from '../views'
+import { AdminView, AdminDashboardView, AdminInboxView, AdminProfileView, BillingView, LoginView, RegisterView, Settings, Reset } from '../views'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -46,6 +46,11 @@ const router = createRouter({
       name: 'register',
       component: RegisterView,
     },
+    {
+      path: '/reset_password',
+      name: 'reset_password',
+      component: Reset,
+    },    
     // {
     //   path: '/:pathMatch(.*)*',
     //   name: 'error',

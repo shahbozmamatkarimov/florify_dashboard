@@ -1,4 +1,5 @@
 <script>
+import { onMounted } from 'vue';
 import CanvasJSChart from "../assets/CanvasJSVueComponent.vue";
 export default {
   components: {
@@ -83,7 +84,6 @@ export default {
       },
       styleOptions: {
         width: "100%",
-        height: "330px",
       },
     };
   },
@@ -95,7 +95,7 @@ export default {
 };
 </script>
 <template>
-  <CanvasJSChart
+  <CanvasJSChart id="chart" class="max-h-[330px] overflow-hidden"
     :options="options"
     :style="styleOptions"
     @chart-ref="chartInstance"

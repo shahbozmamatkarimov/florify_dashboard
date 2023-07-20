@@ -6,6 +6,7 @@ import AdminInboxView from './admin/InboxView.vue';
 import LoginView from './Login.vue'
 import RegisterView from './Register.vue'
 import Settings from './admin/Settings.vue'
+import Reset from './admin/ResetPassword.vue'
 
 export {
     AdminView,
@@ -16,4 +17,5 @@ export {
     LoginView,
     RegisterView,
     Settings,
+    Reset,
 }
