@@ -12,7 +12,7 @@
           />
         </div>
       </router-link>
-      <div class="mx-auto w-full mt-6 sm:leading-8 md:leading-8 lg:leading-10">
+      <div class="mx-auto w-full mt-6 leading-10">
         <div @click="store.toggleNav = true">
           <router-link
             to="/"
@@ -47,7 +47,7 @@
         </div>
         <div @click="store.toggleNav = true">
           <router-link
-            to="/usersettings"
+            to="/settings"
             class="flex gap-3 w-[225px] items-center py-1 px-4 hover:bg-[#8080803f] duration-1000 rounded-lg"
           >
             <i class="bx bxs-cog"></i> Settings

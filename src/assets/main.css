@@ -3,6 +3,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'nucleo';
+  src: url('./fonts/nucleo.ttf') format('truetype');
+}
+
+
+* {
+  font-family: 'nucleo', sans-serif;
+}
+
+
 .title {
   display: inline-block;
   overflow: hidden !important;
@@ -19,14 +30,23 @@ body {
   overflow: hidden;
   /* background: #203843; */
   background: radial-gradient(circle,
-      rgba(236, 252, 248, 0.992) 0%,
-      rgba(176, 223, 248, 0.345) 100%);
+      rgba(236, 252, 248, 0.992) 0%, )
 }
 
-/* ::-webkit-scrollbar {
-    width: 0;
-  } */
+::-webkit-scrollbar {
+  width: 0;
+}
 
 /* body {
   background: radial-gradient(circle, rgba(33, 38, 173, 1) 0%, rgba(41, 153, 209, 1) 100%);
 } */
+
+@media (max-width: 500px){
+  .menu {
+    width: 92%;
+  }
+
+  .exit {
+    margin-left: 15px
+  }
+}

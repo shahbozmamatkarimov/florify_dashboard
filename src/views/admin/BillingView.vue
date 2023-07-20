@@ -1,24 +1,26 @@
 <template>
-  <div>
-    <main
-      class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200"
-    >
+  <main>
+    <AdminMenu class="menu fixed z-50 sm:w-[calc(100%-19rem)] w-[94%] right-0">Billing</AdminMenu>
+    <div class="fixed top-0 bg-white h-20 w-full z-40"></div>
+    <div class="h-[5rem]"></div>
+    <div>
       <!-- Navbar -->
-      <AdminMenu>Billing</AdminMenu>
 
-      <div class="w-full px-6 py-6 mx-auto">
+      <div
+        class="p-5 sm:ml-0 ml-5 mr-4 max-h-[85vh] overflow-hidden overflow-y-auto rounded-xl bg-[#203843]"
+      >
         <!--- content --->
 
         <div class="flex flex-wrap -mx-3">
           <div class="max-w-full px-3 lg:w-2/3 lg:flex-none">
             <div class="flex flex-wrap -mx-3">
-              <div class="w-full max-w-full px-3 mb-4 xl:mb-0 xl:w-1/2 xl:flex-none">
+              <div
+                class="w-full max-w-full px-3 mb-4 xl:mb-0 xl:w-1/2 xl:flex-none"
+              >
                 <div
                   class="relative flex flex-col min-w-0 break-words bg-transparent border-0 border-transparent border-solid shadow-xl rounded-2xl bg-clip-border"
                 >
-                  <div
-                    class="relative overflow-hidden rounded-2xl"
-                  >
+                  <div class="relative overflow-hidden rounded-2xl">
                     <span
                       class="absolute top-0 left-0 w-full h-full bg-center bg-cover bg-gradient-to-tl from-gray-900 to-slate-800 opacity-80"
                     ></span>
@@ -30,25 +32,32 @@
                       <div class="flex">
                         <div class="flex">
                           <div class="mr-6">
-                            <p class="mb-0 leading-normal text-white text-sm opacity-80">
+                            <p
+                              class="mb-0 leading-normal text-white text-sm opacity-80"
+                            >
                               Card Holder
                             </p>
                             <h6 class="mb-0 text-white">Jack Peterson</h6>
                           </div>
                           <div>
-                            <p class="mb-0 leading-normal text-white text-sm opacity-80">Expires</p>
+                            <p
+                              class="mb-0 leading-normal text-white text-sm opacity-80"
+                            >
+                              Expires
+                            </p>
                             <h6 class="mb-0 text-white">11/22</h6>
                           </div>
                         </div>
-                        <div class="flex items-end justify-end w-1/5 ml-auto">
-                        </div>
+                        <div
+                          class="flex items-end justify-end w-1/5 ml-auto"
+                        ></div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="w-full max-w-full px-3 xl:w-1/2 xl:flex-none">
-                <div class="flex flex-wrap -mx-3">
+                <div class="flex flex-wrap -mx-3 mb-1">
                   <div class="w-full max-w-full px-3 md:w-1/2 md:flex-none">
                     <div
                       class="relative flex flex-col min-w-0 break-words bg-white border-0 border-transparent border-solid shadow-soft-xl rounded-2xl bg-clip-border"
@@ -64,17 +73,21 @@
                           ></i>
                         </div>
                       </div>
-                      <div class="flex-auto p-4 pt-0 text-center">
-                        <h6 class="mb-0 text-center">Salary</h6>
-                        <span class="leading-tight text-xs">Belong Interactive</span>
+                      <div class="flex-auto px-4 text-center">
+                        <h6 class="mb-0 text-center">Payment</h6>
+                        <span class="leading-tight text-xs"
+                          >Pending payments</span
+                        >
                         <hr
-                          class="h-px my-4 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent"
+                          class="h-px my-3.5 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent"
                         />
-                        <h5 class="mb-0">+$2000</h5>
+                        <h5 class="pb-2">+$2000</h5>
                       </div>
                     </div>
                   </div>
-                  <div class="w-full max-w-full px-3 mt-6 md:mt-0 md:w-1/2 md:flex-none">
+                  <div
+                    class="w-full max-w-full px-3 mt-6 md:mt-0 md:w-1/2 md:flex-none"
+                  >
                     <div
                       class="relative flex flex-col min-w-0 break-words bg-white border-0 border-transparent border-solid shadow-soft-xl rounded-2xl bg-clip-border"
                     >
@@ -89,13 +102,15 @@
                           ></i>
                         </div>
                       </div>
-                      <div class="flex-auto p-4 pt-0 text-center">
-                        <h6 class="mb-0 text-center">Paypal</h6>
-                        <span class="leading-tight text-xs">Freelance Payment</span>
+                      <div class="flex-auto px-4 text-center">
+                        <h6 class="text-center">Payment</h6>
+                        <span class="leading-tight text-xs"
+                          >Available payments</span
+                        >
                         <hr
-                          class="h-px my-4 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent"
+                          class="h-px my-3.5 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent"
                         />
-                        <h5 class="mb-0">$455.00</h5>
+                        <h5 class="pb-2">$455.00</h5>
                       </div>
                     </div>
                   </div>
@@ -137,7 +152,9 @@
                         />
                       </div>
                       <div class="col-span-2 sm:col-span-1">
-                        <label for="cvv" class="block text-sm font-medium text-gray-700 mb-2"
+                        <label
+                          for="cvv"
+                          class="block text-sm font-medium text-gray-700 mb-2"
                           >CVV</label
                         >
                         <input
@@ -178,7 +195,7 @@
               <!-- payment end -->
             </div>
           </div>
-          <div class="w-full max-w-full px-3 lg:w-1/3 lg:flex-none">
+          <div class="w-full max-w-full pl-2 pr-3 pb-3 lg:w-1/3 lg:flex-none">
             <color:div
               class="relative flex flex-col h-full min-w-0 break-words bg-white border-0 border-transparent border-solid shadow-soft-xl rounded-2xl bg-clip-border"
             >
@@ -186,7 +203,9 @@
                 class="p-4 pb-0 mb-0 bg-white border-b-0 border-b-solid rounded-t-2xl border-b-transparent"
               >
                 <div class="flex flex-wrap -mx-3">
-                  <div class="flex items-center flex-none w-1/2 max-w-full px-3">
+                  <div
+                    class="flex items-center flex-none w-1/2 max-w-full px-3"
+                  >
                     <h6 class="mb-0">Invoices</h6>
                   </div>
                   <div class="flex-none w-1/2 max-w-full px-3 text-right">
@@ -204,7 +223,9 @@
                     class="relative flex justify-between px-4 py-2 pl-0 mb-2 bg-white border-0 rounded-t-inherit text-inherit rounded-xl"
                   >
                     <div class="flex flex-col">
-                      <h6 class="mb-1 font-semibold leading-normal text-sm text-slate-700">
+                      <h6
+                        class="mb-1 font-semibold leading-normal text-sm text-slate-700"
+                      >
                         March, 01, 2020
                       </h6>
                       <span class="leading-tight text-xs">#MS-415646</span>
@@ -222,7 +243,9 @@
                     class="relative flex justify-between px-4 py-2 pl-0 mb-2 bg-white border-0 rounded-xl text-inherit"
                   >
                     <div class="flex flex-col">
-                      <h6 class="mb-1 font-semibold leading-normal text-sm text-slate-700">
+                      <h6
+                        class="mb-1 font-semibold leading-normal text-sm text-slate-700"
+                      >
                         February, 10, 2021
                       </h6>
                       <span class="leading-tight text-xs">#RV-126749</span>
@@ -240,7 +263,9 @@
                     class="relative flex justify-between px-4 py-2 pl-0 mb-2 bg-white border-0 rounded-xl text-inherit"
                   >
                     <div class="flex flex-col">
-                      <h6 class="mb-1 font-semibold leading-normal text-sm text-slate-700">
+                      <h6
+                        class="mb-1 font-semibold leading-normal text-sm text-slate-700"
+                      >
                         April, 05, 2020
                       </h6>
                       <span class="leading-tight text-xs">#FB-212562</span>
@@ -258,7 +283,9 @@
                     class="relative flex justify-between px-4 py-2 pl-0 mb-2 bg-white border-0 rounded-xl text-inherit"
                   >
                     <div class="flex flex-col">
-                      <h6 class="mb-1 font-semibold leading-normal text-sm text-slate-700">
+                      <h6
+                        class="mb-1 font-semibold leading-normal text-sm text-slate-700"
+                      >
                         June, 25, 2019
                       </h6>
                       <span class="leading-tight text-xs">#QW-103578</span>
@@ -276,7 +303,9 @@
                     class="relative flex justify-between px-4 py-2 pl-0 bg-white border-0 rounded-b-inherit rounded-xl text-inherit"
                   >
                     <div class="flex flex-col">
-                      <h6 class="mb-1 font-semibold leading-normal text-sm text-slate-700">
+                      <h6
+                        class="mb-1 font-semibold leading-normal text-sm text-slate-700"
+                      >
                         March, 01, 2019
                       </h6>
                       <span class="leading-tight text-xs">#AR-803481</span>
@@ -325,7 +354,9 @@
                       >
                       <span class="leading-tight text-xs"
                         >VAT Number:
-                        <span class="font-semibold text-slate-700 sm:ml-2">FRB1235476</span></span
+                        <span class="font-semibold text-slate-700 sm:ml-2"
+                          >FRB1235476</span
+                        ></span
                       >
                     </div>
                     <div class="ml-auto text-right">
@@ -340,12 +371,17 @@
                       <a
                         class="inline-block px-4 py-3 mb-0 font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 hover:scale-102 active:opacity-85 bg-x-25 text-slate-700"
                         href="javascript:;"
-                        ><i class="mr-2 fas fa-pencil-alt text-slate-700" aria-hidden="true"></i
+                        ><i
+                          class="mr-2 fas fa-pencil-alt text-slate-700"
+                          aria-hidden="true"
+                        ></i
                         >Edit</a
                       >
                     </div>
                   </li>
-                  <li class="relative flex p-6 mt-4 mb-2 border-0 rounded-xl bg-gray-50">
+                  <li
+                    class="relative flex p-6 mt-4 mb-2 border-0 rounded-xl bg-gray-50"
+                  >
                     <div class="flex flex-col">
                       <h6 class="mb-4 leading-normal text-sm">Lucas Harper</h6>
                       <span class="mb-2 leading-tight text-xs"
@@ -362,7 +398,9 @@
                       >
                       <span class="leading-tight text-xs"
                         >VAT Number:
-                        <span class="font-semibold text-slate-700 sm:ml-2">FRB1235476</span></span
+                        <span class="font-semibold text-slate-700 sm:ml-2"
+                          >FRB1235476</span
+                        ></span
                       >
                     </div>
                     <div class="ml-auto text-right">
@@ -377,7 +415,10 @@
                       <a
                         class="inline-block px-4 py-3 mb-0 font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 hover:scale-102 active:opacity-85 bg-x-25 text-slate-700"
                         href="javascript:;"
-                        ><i class="mr-2 fas fa-pencil-alt text-slate-700" aria-hidden="true"></i
+                        ><i
+                          class="mr-2 fas fa-pencil-alt text-slate-700"
+                          aria-hidden="true"
+                        ></i
                         >Edit</a
                       >
                     </div>
@@ -389,7 +430,9 @@
                       <h6 class="mb-4 leading-normal text-sm">Ethan James</h6>
                       <span class="mb-2 leading-tight text-xs"
                         >Company Name:
-                        <span class="font-semibold text-slate-700 sm:ml-2">Fiber Notion</span></span
+                        <span class="font-semibold text-slate-700 sm:ml-2"
+                          >Fiber Notion</span
+                        ></span
                       >
                       <span class="mb-2 leading-tight text-xs"
                         >Email Address:
@@ -399,7 +442,9 @@
                       >
                       <span class="leading-tight text-xs"
                         >VAT Number:
-                        <span class="font-semibold text-slate-700 sm:ml-2">FRB1235476</span></span
+                        <span class="font-semibold text-slate-700 sm:ml-2"
+                          >FRB1235476</span
+                        ></span
                       >
                     </div>
                     <div class="ml-auto text-right">
@@ -414,7 +459,10 @@
                       <a
                         class="inline-block px-4 py-3 mb-0 font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 hover:scale-102 active:opacity-85 bg-x-25 text-slate-700"
                         href="javascript:;"
-                        ><i class="mr-2 fas fa-pencil-alt text-slate-700" aria-hidden="true"></i
+                        ><i
+                          class="mr-2 fas fa-pencil-alt text-slate-700"
+                          aria-hidden="true"
+                        ></i
                         >Edit</a
                       >
                     </div>
@@ -432,14 +480,18 @@
                   <div class="max-w-full px-3 md:w-1/2 md:flex-none">
                     <h6 class="mb-0">Your Transactions</h6>
                   </div>
-                  <div class="flex items-center justify-end max-w-full px-3 md:w-1/2 md:flex-none">
+                  <div
+                    class="flex items-center justify-end max-w-full px-3 md:w-1/2 md:flex-none"
+                  >
                     <i class="mr-2 far fa-calendar-alt"></i>
                     <small>23 - 30 March 2020</small>
                   </div>
                 </div>
               </div>
               <div class="flex-auto p-4 pt-6">
-                <h6 class="mb-4 font-bold leading-tight uppercase text-xs text-slate-500">
+                <h6
+                  class="mb-4 font-bold leading-tight uppercase text-xs text-slate-500"
+                >
                   Newest
                 </h6>
                 <ul class="flex flex-col pl-0 mb-0 rounded-lg">
@@ -453,8 +505,12 @@
                         <i class="fas fa-arrow-down text-3xs"></i>
                       </button>
                       <div class="flex flex-col">
-                        <h6 class="mb-1 leading-normal text-sm text-slate-700">Netflix</h6>
-                        <span class="leading-tight text-xs">27 March 2020, at 12:30 PM</span>
+                        <h6 class="mb-1 leading-normal text-sm text-slate-700">
+                          Netflix
+                        </h6>
+                        <span class="leading-tight text-xs"
+                          >27 March 2020, at 12:30 PM</span
+                        >
                       </div>
                     </div>
                     <div class="flex flex-col items-center justify-center">
@@ -475,8 +531,12 @@
                         <i class="fas fa-arrow-up text-3xs"></i>
                       </button>
                       <div class="flex flex-col">
-                        <h6 class="mb-1 leading-normal text-sm text-slate-700">Apple</h6>
-                        <span class="leading-tight text-xs">27 March 2020, at 04:30 AM</span>
+                        <h6 class="mb-1 leading-normal text-sm text-slate-700">
+                          Apple
+                        </h6>
+                        <span class="leading-tight text-xs"
+                          >27 March 2020, at 04:30 AM</span
+                        >
                       </div>
                     </div>
                     <div class="flex flex-col items-center justify-center">
@@ -488,7 +548,9 @@
                     </div>
                   </li>
                 </ul>
-                <h6 class="my-4 font-bold leading-tight uppercase text-xs text-slate-500">
+                <h6
+                  class="my-4 font-bold leading-tight uppercase text-xs text-slate-500"
+                >
                   Yesterday
                 </h6>
                 <ul class="flex flex-col pl-0 mb-0 rounded-lg">
@@ -502,8 +564,12 @@
                         <i class="fas fa-arrow-up text-3xs"></i>
                       </button>
                       <div class="flex flex-col">
-                        <h6 class="mb-1 leading-normal text-sm text-slate-700">Stripe</h6>
-                        <span class="leading-tight text-xs">26 March 2020, at 13:45 PM</span>
+                        <h6 class="mb-1 leading-normal text-sm text-slate-700">
+                          Stripe
+                        </h6>
+                        <span class="leading-tight text-xs"
+                          >26 March 2020, at 13:45 PM</span
+                        >
                       </div>
                     </div>
                     <div class="flex flex-col items-center justify-center">
@@ -524,8 +590,12 @@
                         <i class="fas fa-arrow-up text-3xs"></i>
                       </button>
                       <div class="flex flex-col">
-                        <h6 class="mb-1 leading-normal text-sm text-slate-700">HubSpot</h6>
-                        <span class="leading-tight text-xs">26 March 2020, at 12:30 PM</span>
+                        <h6 class="mb-1 leading-normal text-sm text-slate-700">
+                          HubSpot
+                        </h6>
+                        <span class="leading-tight text-xs"
+                          >26 March 2020, at 12:30 PM</span
+                        >
                       </div>
                     </div>
                     <div class="flex flex-col items-center justify-center">
@@ -546,8 +616,12 @@
                         <i class="fas fa-arrow-up text-3xs"></i>
                       </button>
                       <div class="flex flex-col">
-                        <h6 class="mb-1 leading-normal text-sm text-slate-700">Creative Tim</h6>
-                        <span class="leading-tight text-xs">26 March 2020, at 08:30 AM</span>
+                        <h6 class="mb-1 leading-normal text-sm text-slate-700">
+                          Creative Tim
+                        </h6>
+                        <span class="leading-tight text-xs"
+                          >26 March 2020, at 08:30 AM</span
+                        >
                       </div>
                     </div>
                     <div class="flex flex-col items-center justify-center">
@@ -568,8 +642,12 @@
                         <i class="fas fa-exclamation text-3xs"></i>
                       </button>
                       <div class="flex flex-col">
-                        <h6 class="mb-1 leading-normal text-sm text-slate-700">Webflow</h6>
-                        <span class="leading-tight text-xs">26 March 2020, at 05:00 AM</span>
+                        <h6 class="mb-1 leading-normal text-sm text-slate-700">
+                          Webflow
+                        </h6>
+                        <span class="leading-tight text-xs"
+                          >26 March 2020, at 05:00 AM</span
+                        >
                       </div>
                     </div>
                     <div class="flex flex-col items-center justify-center">
@@ -586,14 +664,12 @@
           </div>
         </div>
       </div>
-    </main>
-  </div>
+    </div>
+  </main>
 </template>
 
 <script setup>
-import { AdminMenu } from '../../components';
-
+import { AdminMenu } from "../../components";
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

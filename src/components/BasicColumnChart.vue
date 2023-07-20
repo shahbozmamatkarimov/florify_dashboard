@@ -1,5 +1,5 @@
 <script>
-import CanvasJSChart from "../../../flower/src/assets/CanvasJSVueComponent.vue";
+import CanvasJSChart from "../assets/CanvasJSVueComponent.vue";
 
 export default {
   components: {
@@ -44,10 +44,14 @@ export default {
           },
         ],
       },
+      styleOptions: {
+        width: "100%",
+        height: "360px",
+      },
     };
   },
 };
 </script>
 <template>
-  <CanvasJSChart :options="options" />
+  <CanvasJSChart class="max-h-[330px] overflow-hidden" :options="options" />
 </template>

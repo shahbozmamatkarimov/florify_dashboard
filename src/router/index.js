@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { AdminView, AdminDashboardView, AdminInboxView, AdminProfileView, BillingView } from '../views'
+import { AdminView, AdminDashboardView, AdminInboxView, AdminProfileView, BillingView, LoginView, RegisterView, Settings } from '../views'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,9 +29,63 @@ const router = createRouter({
           name: 'admin_inbox',
           component: AdminInboxView,
         },
+        {
+          path: '/settings',
+          name: 'settings',
+          component: Settings,
+        },
       ]
     },
+    {
+      path: '/login',
+      name: 'login',
+      component: LoginView,
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: RegisterView,
+    },
+    // {
+    //   path: '/:pathMatch(.*)*',
+    //   name: 'error',
+    //   component: Error,
+    // },
   ]
 })
+
+// router.beforeEach((to, from, next) => {
+//   try {
+//     axios.get('/admin')
+//       .then((res) => {
+//         if (res.data && to.name !== 'register') {
+//           next({ name: 'register' })
+//         } else if (!res.data && to.name !== 'login') {
+//           axios.get('test-result', {
+//             headers: {
+//               Authorization: `Bearer ${localStorage.getItem("token")}`,
+//             },
+//           })
+//             .then(res => {
+//               next()
+//             })
+//             .catch(err => {
+//               if (err.response.data.message == "Token vaqti tugagan!" && to.name !== 'login') {
+//                 next({ name: 'login' })
+//               } else {
+//                 next()
+//               }
+//             })
+//         } else {
+//           next()
+//         }
+//       })
+//       .catch((err) => {
+//         console.log(err);
+//       });
+//   } catch (error) {
+//     console.log(error);
+//   }
+// })
 
 export default router

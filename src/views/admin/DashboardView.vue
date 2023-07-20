@@ -1,71 +1,24 @@
 <template>
   <div>
-    <AdminMenu>Dashboard</AdminMenu>
-    <main class="mr-5 text-white">
-      <!-- <section>
-        <button
-          class="mr-1.5 inline-block rounded my-5 bg-blue-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-blue-500-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-blue-500-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-blue-500-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
-          type="button"
-          data-te-offcanvas-toggle
-          data-te-target="#offcanvasRight"
-          aria-controls="offcanvasRight"
-          data-te-ripple-init
-          data-te-ripple-color="light"
-        >
-          Toggle right offcanvas
-        </button>
-
-        <div
-          class="fixed right-0 top-0 z-50 flex w-96 max-w-2xl min-h-screen flex-col border-none bg-white bg-clip-padding text-neutral-700 shadow-sm outline-none transition duration-300 ease-in-out [&[data-te-offcanvas-show]]:transform-none"
-        >
-          <div class="flex items-center justify-between p-4">
-            <h5
-              class="mb-0 font-semibold leading-normal"
-            >
-              Offcanvas right
-            </h5>
-            <button
-              type="button"
-              class="box-content rounded-none border-none opacity-50 hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
-              data-te-offcanvas-dismiss
-            >
-              <span
-                class="w-[1em] focus:opacity-100 disabled:pointer-events-none disabled:select-none disabled:opacity-25 [&.disabled]:pointer-events-none [&.disabled]:select-none [&.disabled]:opacity-25"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </span>
-            </button>
-          </div>
-          <div class="offcanvas-body flex-grow overflow-y-auto p-4">...</div>
-        </div>
-      </section> -->
+    <AdminMenu class="menu fixed z-50 sm:w-[calc(100%-19rem)] w-[94%] right-0">Dashboard</AdminMenu>
+    <div class="fixed top-0 bg-white h-20 w-full z-40"></div>
+    <div class="h-[5rem]"></div>
+    
+    <main class="mr-5 sm:ml-0 ml-5 mt-1 mb-5 text-white">
       <section>
         <div class="flex flex-wrap -mx-2">
           <!-- card1 -->
           <div
-            class="w-full max-w-full px-2 mb-4 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4"
+            class="max-w-full px-2 mb-4 md:w-1/2 sm:w-full w-1/2 xl:mb-0 xl:w-1/4"
             v-for="(i, index) in 4"
             :key="i"
           >
             <!-- card -->
             <div
-              class="relative flex flex-col min-w-0 break-words bg-[#203843] shadow-soft-xl rounded-lg bg-clip-border"
+              class="relative flex flex-col break-words bg-[#203843] shadow-soft-xl rounded-lg bg-clip-border"
             >
               <div class="flex-auto p-4">
-                <div class="flex flex-row -mx-3">
+                <div class="flex justify-between w-full -mx-3">
                   <div class="flex-none w-2/3 max-w-full px-3">
                     <div>
                       <p
@@ -82,7 +35,7 @@
                       </h5>
                     </div>
                   </div>
-                  <div class="px-10 text-right basis-1/3">
+                  <div class="text-right">
                     <div
                       class="w-12 h-12 flex justify-center items-center rounded-lg"
                       :class="{
@@ -98,19 +51,19 @@
                     >
                       <i
                         v-show="index == 0"
-                        class="bx bx-user leading-none text-4xl text-white"
+                        class="bx bx-user leading-none text-4xl"
                       ></i>
                       <i
                         v-show="index == 1"
-                        class="bx bxs-hand-up leading-none text-4xl text-white"
+                        class="bx bxs-hand-up leading-none text-4xl"
                       ></i>
                       <i
                         v-show="index == 2"
-                        class="bx bxs-like leading-none text-4xl text-white"
+                        class="bx bxs-like leading-none text-4xl"
                       ></i>
                       <i
                         v-show="index == 3"
-                        class="bx bxs-dislike leading-none text-4xl text-white"
+                        class="bx bxs-dislike leading-none text-4xl"
                       ></i>
                     </div>
                   </div>
@@ -120,10 +73,8 @@
           </div>
         </div>
 
-        <div class="flex flex-wrap mt-4">
-          <div
-            class="w-full max-w-full pr-4 mt-0 mb-6 lg:mb-0 lg:w-5/12 lg:flex-none"
-          >
+        <div class="grid lg:grid-cols-2 gap-4 mt-4">
+          <div>
             <div
               class="border-black/12.5 shadow-soft-xl relative z-20 flex min-w-0 flex-col break-words rounded-lg border-0 border-solid bg-[#203843] bg-clip-border"
             >
@@ -144,9 +95,9 @@
                     >
                       <div class="flex mb-2">
                         <div
-                          class="flex items-center justify-center w-5 h-5 mr-2 text-center bg-center rounded fill-current shadow-soft-2xl bg-gradient-to-tl from-purple-700 to-pink-500 text-neutral-900"
+                          class="flex items-center justify-center w-5 h-5 mr-2 text-center bg-center rounded fill-current shadow-soft-2xl bg-gradient-to-tl from-purple-700 to-pink-500"
                         >
-                          <i class="bx bxs-user text-white"></i>
+                          <i class="bx bxs-user"></i>
                         </div>
                         <p
                           class="mt-1 mb-0 font-semibold leading-tight text-xs"
@@ -159,7 +110,7 @@
                         class="text-xs h-0.75 flex w-3/4 overflow-visible rounded-lg bg-gray-200"
                       >
                         <div
-                          class="duration-600 ease-soft -mt-0.38 -ml-px flex h-1.5 w-3/5 flex-col justify-center overflow-hidden whitespace-nowrap rounded-lg bg-purple-700 text-center text-white transition-all"
+                          class="duration-600 ease-soft -mt-0.38 -ml-px flex h-1.5 w-3/5 flex-col justify-center overflow-hidden whitespace-nowrap rounded-lg bg-purple-700 text-center transition-all"
                           role="progressbar"
                           aria-valuenow="60"
                           aria-valuemin="0"
@@ -172,9 +123,9 @@
                     >
                       <div class="flex mb-2">
                         <div
-                          class="flex items-center justify-center w-5 h-5 mr-2 text-center bg-center rounded fill-current shadow-soft-2xl bg-gradient-to-tl from-blue-600 to-cyan-400 text-neutral-900"
+                          class="flex items-center justify-center w-5 h-5 mr-2 text-center bg-center rounded fill-current shadow-soft-2xl bg-gradient-to-tl from-blue-600 to-cyan-400 900"
                         >
-                          <i class="bx bxs-hand-up text-white"></i>
+                          <i class="bx bxs-hand-up"></i>
                         </div>
                         <p
                           class="mt-1 mb-0 font-semibold leading-tight text-xs"
@@ -187,7 +138,7 @@
                         class="text-xs h-0.75 flex w-3/4 overflow-visible rounded-lg bg-gray-200"
                       >
                         <div
-                          class="duration-600 ease-soft -mt-0.38 w-9/10 -ml-px flex h-1.5 flex-col justify-center overflow-hidden whitespace-nowrap rounded-lg bg-slate-700 text-center text-white transition-all"
+                          class="duration-600 ease-soft -mt-0.38 w-9/10 -ml-px flex h-1.5 flex-col justify-center overflow-hidden whitespace-nowrap rounded-lg bg-slate-700 text-center transition-all"
                           role="progressbar"
                           aria-valuenow="90"
                           aria-valuemin="0"
@@ -200,9 +151,9 @@
                     >
                       <div class="flex mb-2">
                         <div
-                          class="flex items-center justify-center w-5 h-5 mr-2 text-center bg-center rounded fill-current shadow-soft-2xl bg-gradient-to-tl from-red-500 to-yellow-400 text-neutral-900"
+                          class="flex items-center justify-center w-5 h-5 mr-2 text-center bg-center rounded fill-current shadow-soft-2xl bg-gradient-to-tl from-red-500 to-yellow-400"
                         >
-                          <i class="bx bxs-like text-white"></i>
+                          <i class="bx bxs-like"></i>
                         </div>
                         <p
                           class="mt-1 mb-0 font-semibold leading-tight text-xs"
@@ -215,7 +166,7 @@
                         class="text-xs h-0.75 flex w-3/4 overflow-visible rounded-lg bg-gray-200"
                       >
                         <div
-                          class="duration-600 ease-soft -mt-0.38 w-3/10 -ml-px flex h-1.5 flex-col justify-center overflow-hidden whitespace-nowrap rounded-lg bg-slate-700 text-center text-white transition-all"
+                          class="duration-600 ease-soft -mt-0.38 w-3/10 -ml-px flex h-1.5 flex-col justify-center overflow-hidden whitespace-nowrap rounded-lg bg-slate-700 text-center transition-all"
                           role="progressbar"
                           aria-valuenow="30"
                           aria-valuemin="0"
@@ -228,9 +179,9 @@
                     >
                       <div class="flex mb-2">
                         <div
-                          class="flex items-center justify-center w-5 h-5 mr-2 text-center bg-center rounded fill-current shadow-soft-2xl bg-gradient-to-tl from-red-600 to-rose-400 text-neutral-900"
+                          class="flex items-center justify-center w-5 h-5 mr-2 text-center bg-center rounded fill-current shadow-soft-2xl bg-gradient-to-tl from-red-600 to-rose-400"
                         >
-                          <i class="bx bxs-dislike text-white"></i>
+                          <i class="bx bxs-dislike"></i>
                         </div>
                         <p
                           class="mt-1 mb-0 font-semibold leading-tight text-xs"
@@ -243,7 +194,7 @@
                         class="text-xs h-0.75 flex w-3/4 overflow-visible rounded-lg bg-gray-200"
                       >
                         <div
-                          class="duration-600 ease-soft -mt-0.38 -ml-px flex h-1.5 w-1/2 flex-col justify-center overflow-hidden whitespace-nowrap rounded-lg bg-slate-700 text-center text-white transition-all"
+                          class="duration-600 ease-soft -mt-0.38 -ml-px flex h-1.5 w-1/2 flex-col justify-center overflow-hidden whitespace-nowrap rounded-lg bg-slate-700 text-center transition-all"
                           role="progressbar"
                           aria-valuenow="50"
                           aria-valuemin="0"
@@ -257,7 +208,7 @@
             </div>
           </div>
           <div
-            class="w-full max-w-full mt-0 lg:w-7/12 lg:flex-none rounded-lg bg-[#203843]"
+            class="rounded-lg bg-[#203843]"
           >
             <div
               class="shadow-soft-xl relative z-20 flex min-w-0 flex-col break-words rounded-lg border-0 border-solid bg-clip-border"
@@ -280,7 +231,7 @@
                 <div class="flex-none w-1/2 max-w-full py-4 pl-0 pr-3 mt-0">
                   <div class="flex mb-2">
                     <div
-                      class="flex items-center justify-center w-5 h-5 mr-2 text-center bg-center rounded fill-current shadow-soft-2xl bg-gradient-to-tl from-blue-600 to-cyan-400 text-neutral-900"
+                      class="flex items-center justify-center w-5 h-5 mr-2 text-center bg-center rounded fill-current shadow-soft-2xl bg-gradient-to-tl from-blue-600 to-cyan-400"
                     >
                       <svg
                         width="10px"
@@ -337,7 +288,7 @@
                     class="text-xs h-0.75 flex w-3/4 overflow-visible rounded-lg bg-gray-200"
                   >
                     <div
-                      class="duration-600 ease-soft -mt-0.38 -ml-px flex h-1.5 w-3/5 flex-col justify-center overflow-hidden whitespace-nowrap rounded-lg bg-blue-700 text-center text-white transition-all"
+                      class="duration-600 ease-soft -mt-0.38 -ml-px flex h-1.5 w-3/5 flex-col justify-center overflow-hidden whitespace-nowrap rounded-lg bg-blue-700 text-center transition-all"
                       role="progressbar"
                       aria-valuenow="60"
                       aria-valuemin="0"
@@ -348,7 +299,7 @@
                 <div class="flex-none w-1/2 max-w-full py-4 pl-0 pr-3 mt-0">
                   <div class="flex mb-2">
                     <div
-                      class="flex items-center justify-center w-5 h-5 mr-2 text-center bg-center rounded fill-current shadow-soft-2xl bg-gradient-to-tl from-red-500 to-yellow-400 text-neutral-900"
+                      class="flex items-center justify-center w-5 h-5 mr-2 text-center bg-center rounded fill-current shadow-soft-2xl bg-gradient-to-tl from-red-500 to-yellow-400"
                     >
                       <svg
                         width="10px"
@@ -396,7 +347,7 @@
                     class="text-xs h-0.75 flex w-3/4 overflow-visible rounded-lg bg-gray-200"
                   >
                     <div
-                      class="duration-600 ease-soft -mt-0.38 -ml-px flex h-1.5 w-2/5 flex-col justify-center overflow-hidden whitespace-nowrap rounded-lg bg-yellow-400 text-center text-white transition-all"
+                      class="duration-600 ease-soft -mt-0.38 -ml-px flex h-1.5 w-2/5 flex-col justify-center overflow-hidden whitespace-nowrap rounded-lg bg-yellow-400 text-center transition-all"
                       role="progressbar"
                       aria-valuenow="60"
                       aria-valuemin="0"

@@ -1,205 +1,260 @@
 <template>
-  <div class="overflow-hidden">
-    <AdminMenu>Inbox</AdminMenu>
-    <nav
-      class="flex z-30 md:justify-center justify-between px-5 md:py-5 md:px-12 items-center rounded-b-2xl shadow-lg bg-[#32cdb1a8]"
-    >
+  <main
+    class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200"
+  >
+  <AdminMenu class="menu fixed z-50 sm:w-[calc(100%-19rem)] w-[94%] right-0">Inbox</AdminMenu>
+  <div class="fixed top-0 bg-white h-20 w-full z-40"></div>
+  <div class="h-[5rem]"></div>
+    <!-- Navbar -->
+
+    <div class="flex items-center justify-between sm:ml-0 ml-3 mr-5">
+      <div class="border inline-block px-1 rounded-lg">
+        <label>
+          <input class="h-4 w-4 cursor-pointer" type="checkbox" />
+        </label>
+        <select class="py-2 outline-none w-5">
+          <option class="bg-[#203843] text-white" value="1">News</option>
+          <option class="bg-[#203843] text-white" value="2">Todays</option>
+          <option class="bg-[#203843] text-white" value="2">Old</option>
+          <option class="bg-[#203843] text-white" value="2">All</option>
+        </select>
+      </div>
       <div>
-        <form>
-          <div class="relative">
-            <label
-              for="search"
-              class="absolute text-2xl rounded-l-full z-10 bg-blue-500 inset-y-0 left-0 flex items-center p-3 cursor-pointer"
-            >
-              <i class="bx bx-search text-blue"></i>
-            </label>
-            <input
-              type="search"
-              id="search"
-              class="block w-full pr-3 cursor-pointer py-2 pl-16 text-sm text-gray-900 border focus:shadow-md border-gray-300 rounded-full bg-gray-50 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-              placeholder="Qidirish..."
-              required
-            />
-          </div>
-        </form>
-      </div>
-      <div class="md:hidden block pl-5 -top-2">
-        <i
-          id="cog"
-          @click="cog = !cog"
-          class="bx bx-cog cursor-pointer text-xl mt-5 active:bg-gray-500 active:shadow-xl active:border rounded bg-gray-400 py-1 px-2"
-        ></i>
-      </div>
-    </nav>
-    <div class="flex items-center justify-between">
-      <div class="px-12 pt-5 lg:max-w-[700px] items-center w-full flex justify-between">
-        <div class="flex gap-12">
-          <div
-            class="flex items-center mb-5 pt-1 pl-3 active:bg-gray-500 active:shadow-xl active:border py-1 rounded-lg h-10 bg-gray-400"
-          >
-            <input type="checkbox" class="ml-4 w-5 h-5" />
-            <select id="select" class="focus:outline-none bg-transparent mx-2 rounded-lg">
-              <option value="0">All</option>
-              <option value="1">None</option>
-              <option value="2">Read</option>
-              <option value="3">Unread</option>
-            </select>
-          </div>
-          <div>
-            <p>
-              <i
-                class="bx bx-refresh text-2xl p-2 active:bg-gray-500 active:shadow-xl active:border py-1 rounded-lg bg-gray-400"
-              ></i>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="md:block hidden px-12 -top-2">
-        <i
-          @click="cog = !cog"
-          class="bx bx-cog cursor-pointer text-xl mt-5 active:bg-gray-500 active:shadow-xl active:border rounded bg-gray-400 py-1 px-2"
-        ></i>
-      </div>
-    </div>
-
-    <div class="flex justify-between md:px-12">
-      <div
-        class="bg-white lg:mx-0 mx-auto max-w-[600px] overflow-y-auto max-h-[410px] w-full rounded-lg items-center"
-      >
-        <div
-          class="flex p-2 border-t-2"
-          v-for="el in 5"
-          :key="el"
-          :class="{ 'rounded-t-lg': el == 1 }"
-        >
-          <div class="flex px-5 items-center">
-            <input type="checkbox" class="w-5 h-5 cursor-pointer" />
-          </div>
-          <div class="w-full pr-5">
-            <div class="flex justify-between">
-              <h1 class="font-bold truncate">Mahsulotingiz sotildi</h1>
-              <p class="truncate">5:36 pm</p>
-            </div>
-            <div class="w-full max-w-lg dark:bg-gray-800 dark:border-gray-700">
-              <div class="flow-root">
-                <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
-                  <li>
-                    <div class="flex items-center space-x-4">
-                      <div class="flex-shrink-0">
-                        <img
-                          class="w-10 h-10 rounded-full"
-                          src="https://t3.ftcdn.net/jpg/01/80/58/26/360_F_180582645_OC9VCIHohTXPFKKas6TKVTQW8ltmHmtV.webp"
-                          alt="Neil image"
-                        />
-                      </div>
-                      <div class="flex-1 min-w-0">
-                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                          Neil Sims
-                        </p>
-                        <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                          email@windster.com
-                        </p>
-                      </div>
-                      <div
-                        class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white"
-                      >
-                        $320
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="flex items-center" :class="{ hidden: true }">
-            <i class="bx bx-trash cursor-pointer pr-5 text-red-600 text-lg"></i>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="lg:block lg:static absolute max-w-[280px] rounded-lg border bg-white p-5 lg:ml-5 z-10 md:right-10 md:-top-4 right-5 -top-20 lg:outline-none outline outline-[1000px] outline-[#80808044]"
-        :class="{ hidden: cog }"
-      >
-        <div class="flex lg:justify-center justify-between items-center pb-2 pt-0">
-          <h1 class="font-bold text-center text-lg">Sozlamalar</h1>
-          <i @click="cog = !cog" class="bx bx-x-circle text-2xl lg:hidden"></i>
-        </div>
-        <div>
-          <h1 class="font-bold">Ovoz</h1>
-          <div class="py-1">
-            <p class="p-1">
-              <input id="default" class="cursor-pointer" type="radio" name="voice" />
-              <label class="cursor-pointer px-2" for="default">Default</label>
-            </p>
-            <p class="p-1">
-              <input id="baland" class="cursor-pointer" type="radio" name="voice" />
-              <label class="cursor-pointer px-2" for="baland">Baland</label>
-            </p>
-            <p class="p-1">
-              <input id="o'rta" class="cursor-pointer" type="radio" name="voice" />
-              <label class="cursor-pointer px-2" for="o'rta">O'rta</label>
-            </p>
-            <p class="p-1">
-              <input id="past" class="cursor-pointer" type="radio" name="voice" />
-              <label class="cursor-pointer px-2" for="past">Past</label>
-            </p>
-            <p class="p-1">
-              <input id="ovozsiz" class="cursor-pointer" type="radio" name="voice" />
-              <label class="cursor-pointer px-2" for="ovozsiz">Ovozsiz</label>
-            </p>
-          </div>
-        </div>
-        <div>
-          <h1 class="py-1 font-bold">Eslatma</h1>
-          <select class="pb-2">
-            <option value="0">15 min</option>
-            <option value="1">30 min</option>
-            <option value="2">45 min</option>
-            <option value="3">1 soatda</option>
-            <option value="4">2 soatda</option>
-            <option value="5">3 soatda</option>
-            <option value="6">4 soatda</option>
-            <option value="7">5 soatda</option>
+        <div class="border inline-block px-1 rounded-lg">
+          <i class="bx bx-show text-xl"></i>
+          <select class="py-2 outline-none w-5">
+            <option value="1">News</option>
+            <option value="2">Todays</option>
+            <option value="2">Online</option>
+            <option value="2">Offline</option>
+            <option value="2">Old</option>
+            <option value="2">All</option>
           </select>
         </div>
-        <div>
-          <h1 class="font-bold">Orqa fon</h1>
-          <div class="flex flex-wrap">
-            <div class="p-2" v-for="el in 6" :key="el">
-              <img
-                class="rounded-lg max-w-10 max-h-8 cursor-pointer"
-                src="https://media.istockphoto.com/id/1341408852/video/colored-smoke-on-a-dark-background-blue-and-red-light-with-smoke.jpg?s=640x640&k=20&c=v2DQUY8IVbli_6FH_9KAs6YWRXlDdYiBJHfp7JFh7NY="
-                alt="img"
-              />
-            </div>
-          </div>
-        </div>
-        <button
-          @click="cog = !cog"
-          class="lg:hidden float-right mt-2 py-1 px-5 rounded bg-blue-600"
-        >
-          close
-        </button>
+        <i class="bx bx-trash cursor-pointer py-2 px-2 ml-5 border inline-block rounded-lg hover:bg-red-500 hover:text-white"></i>
       </div>
     </div>
 
-    <div class="flex items-center lg:px-12 lg:justify-start justify-center py-4">
-      <p class="mx-2"><span>1</span>-<span>50</span> of <span>234</span></p>
-      <p>
-        <i
-          class="bx bx-chevron-left p-2 active:bg-gray-500 active:shadow-xl active:border rounded bg-gray-400 mx-1"
-        ></i>
-        <i
-          class="bx bx-chevron-right p-2 active:bg-gray-500 active:shadow-xl active:border rounded bg-gray-400 mx-1"
-        ></i>
-      </p>
+    <div class="w-full sm:pl-0 pl-3 pr-5 py-6 mx-auto">
+      <!-- table 1 -->
+
+      <div class="flex flex-wrap -mx-3">
+        <div class="flex-none w-full max-w-full px-3">
+          <div
+            class="relative flex flex-col min-w-0 break-words bg-white border-0 border-transparent border-solid shadow-soft-xl rounded-2xl bg-clip-border"
+          >
+            <div class="flex-auto px-0 pt-0 border overflow-hidden rounded-xl">
+              <ul class="grid grid-cols-2">
+                <li @click="store.type = 2" :class="{'bg-[#203843] text-white': store.type == 2}" class="py-2 md:text-lg sm:text-[0.9rem] text-xs whitespace-nowrap font-semibold px-4 cursor-pointer">Sotuvchilar</li>
+                <li @click="store.type = 1" :class="{'bg-[#203843] text-white': store.type == 1}" class="py-2 md:text-lg sm:text-[0.9rem] text-xs whitespace-nowrap font-semibold px-4 cursor-pointer text-end">Sotilgan mahsulotlar</li>
+              </ul>
+              <div class="p-0 overflow-x-auto">
+                <table class="items-center w-full lg:text-[1rem] text-sm text-slate-500">
+                  <thead class="align-bottom">
+                    <tr class="bg-gray-500">
+                      <th></th>
+                      <th
+                        class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none border-b-solid tracking-none whitespace-nowrap text-slate-50 opacity-70"
+                      >
+                        User
+                      </th>
+                      <th
+                        class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none border-b-solid tracking-none whitespace-nowrap text-slate-50 opacity-70"
+                      >
+                        Message
+                      </th>
+                      <th
+                        class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none border-b-solid tracking-none whitespace-nowrap text-slate-50 opacity-70"
+                      >
+                        Product
+                      </th>
+                      <th
+                        class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none border-b-solid tracking-none whitespace-nowrap text-slate-50 opacity-70"
+                      >
+                        Status
+                      </th>
+                      <th
+                        class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none border-b-solid tracking-none whitespace-nowrap text-slate-50 opacity-70"
+                      >
+                        Time
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      class="border-b cursor-pointer hover:bg-slate-100"
+                      v-for="i in 10"
+                      :key="i"
+                    >
+                    <td class="pl-5">
+                      <input class="w-4 h-4" type="checkbox" />
+                    </td>
+                      <td
+                        class="p-2 align-middle bg-transparent whitespace-nowrap shadow-transparent"
+                      >
+                        <div class="flex px-2 py-1">
+                          <div>
+                            <img
+                              src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"
+                              class="inline-flex items-center justify-center mr-4 text-sm text-white transition-all duration-200 ease-soft-in-out h-9 w-9 min-w-[1rem] mr-7  min-h-9 rounded-xl"
+                              alt="user1"
+                            />
+                          </div>
+                          <div class="flex flex-col justify-center">
+                            <h6 class="mb-0 text-sm leading-normal">
+                              John Michael
+                            </h6>
+                            <p
+                              class="mb-0 text-xs leading-tight text-slate-400"
+                            >
+                              john@creative-tim.com
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="p-2 align-middle bg-transparent whitespace-nowrap shadow-transparent"
+                      >
+                        <p class="mb-0 text-xs font-semibold leading-tight">
+                          Mahsulot sotildi
+                        </p>
+                      </td>
+                      <td
+                        class="flex p-2 align-middle bg-transparent whitespace-nowrap shadow-transparent"
+                      >
+                        <img
+                          class="h-14 min-w-[4rem] w-16 rounded-lg"
+                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU7QbZ7Ps_hMspbECRCvLeT4GZC7h8HI2AIGrqbEKX&s"
+                          alt="img"
+                        />
+                        <div
+                          class="flex flex-col justify-between py-1 mb-0 text-xs px-2 leading-tight text-slate-400"
+                        >
+                          <h1 class="text-sm">Atirgul</h1>
+                          <p>400 000 so'm</p>
+                        </div>
+                      </td>
+                      <td
+                        class="p-2 text-sm leading-normal text-center align-middle bg-transparent whitespace-nowrap shadow-transparent"
+                      >
+                        <span
+                          class="bg-gradient-to-tl from-green-600 to-lime-400 px-3 text-xs rounded-lg pt-1.5 pb-2 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white"
+                          >Online</span
+                        >
+                      </td>
+                      <td
+                        class="p-2 text-center align-middle bg-transparent whitespace-nowrap shadow-transparent"
+                      >
+                        <span
+                          class="text-xs font-semibold leading-tight text-slate-400"
+                          >23/04/18</span
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <nav class="lg:mt-0 -mt-5" aria-label="Page navigation example">
+                <ul
+                  class="flex items-center justify-center -space-x-px h-20 text-base"
+                >
+                  <li>
+                    <a
+                      href="#"
+                      class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                    >
+                      <span class="sr-only">Previous</span>
+                      <svg
+                        class="w-3 h-3"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 6 10"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M5 1 1 5l4 4"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                      >1</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                      >2</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      aria-current="page"
+                      class="z-10 flex items-center justify-center px-4 h-10 leading-tight text-blue-600 border border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
+                      >3</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                      >4</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                      >5</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                    >
+                      <span class="sr-only">Next</span>
+                      <svg
+                        class="w-3 h-3"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 6 10"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="m1 9 4-4-4-4"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+  </main>
 </template>
-  
-  <script setup>
-import { ref } from 'vue'
-import { AdminMenu } from '../../components';
-const cog = ref(true)
+
+<script setup>
+import { reactive } from "vue";
+import { AdminMenu } from "../../components";
+
+const store = reactive({
+  type: 1,
+})
 </script>
