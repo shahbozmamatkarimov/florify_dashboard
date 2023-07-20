@@ -4,10 +4,10 @@
   >
     <div>
       <router-link to="/">
-        <div class="h-10 cursor-pointer w-full border-b-2">
+        <div class="h-12 cursor-pointer w-full border-b-2">
           <img
-            class="h-10 mx-auto pb-2"
-            src="../assets/florago.svg"
+            class="h-12 mx-auto pb-2"
+            src="../assets/logo.webp"
             alt="img"
           />
         </div>
