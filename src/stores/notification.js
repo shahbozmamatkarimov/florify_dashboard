@@ -10,6 +10,7 @@ export const useNotificationStore = defineStore('notification', () => {
             message: h("b", { style: "color: green;" }, message),
             customClass: "background: black;",
             type: "success",
+            duration: 1500,
         });
     };
 
@@ -18,6 +19,7 @@ export const useNotificationStore = defineStore('notification', () => {
             title: "Warning",
             message: h("b", { style: "color: #e6a23c;" }, message),
             type: "warning",
+            duration: 1500,
         });
     };
 

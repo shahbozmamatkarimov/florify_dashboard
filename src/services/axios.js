@@ -1,3 +1,3 @@
 import axios from 'axios'
-axios.defaults.baseURL = 'http://localhost:3000/api'
+axios.defaults.baseURL = 'https://florify-market.onrender.com/api'
 export default axios

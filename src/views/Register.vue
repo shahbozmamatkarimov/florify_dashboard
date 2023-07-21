@@ -11,7 +11,7 @@
             <h1
               class="text-xl font-bold leading-tight tracking-tight text-white md:text-2xl dark:text-white"
             >
-              Register to your account
+              Hisobingizga ro'yxatdan o'ting
             </h1>
             <form
               @submit.prevent="Register"
@@ -36,26 +36,9 @@
               </div>
               <div>
                 <label
-                  for="tel"
-                  class="block mb-2 text-sm font-medium text-white dark:text-white"
-                  >Phone number</label
-                >
-                <input
-                  v-model="form.phone"
-                  type="tel"
-                  name="tel"
-                  id="tel"
-                  autocomplete="tel"
-                  class="bg-gray-50 border border-gray-300 text-black sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="admin"
-                  required=""
-                />
-              </div>
-              <div>
-                <label
                   for="email"
                   class="block mb-2 text-sm font-medium text-white dark:text-white"
-                  >Your email</label
+                  >Email</label
                 >
                 <input
                   v-model="form.email"
@@ -64,7 +47,7 @@
                   id="email"
                   autocomplete="email"
                   class="bg-gray-50 border border-gray-300 text-black sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="name@company.com"
+                  placeholder="example@company.com"
                   required=""
                 />
               </div>
@@ -72,7 +55,7 @@
                 <label
                   for="password"
                   class="block mb-2 text-sm font-medium text-white dark:text-white"
-                  >Password</label
+                  >Parol</label
                 >
                 <input
                   v-model="form.password"
@@ -85,24 +68,36 @@
                   required=""
                 />
               </div>
-              <a
-                href="#"
-                class="text-sm inline-block font-medium text-blue-600 hover:underline dark:text-blue-500"
-                >Forgot password?</a
-              >
+              <div>
+                <label
+                  for="password"
+                  class="block mb-2 text-sm font-medium text-white dark:text-white"
+                  >Secret key</label
+                >
+                <input
+                  v-model="form.secret_key"
+                  type="password"
+                  name="password"
+                  id="password"
+                  autocomplete="new-password"
+                  placeholder="••••••••"
+                  class="bg-gray-50 border border-gray-300 text-black sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  required=""
+                />
+              </div>
               <button
                 type="submit"
                 class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:outline-none font-medium rounded-lg text-sm px-5 py-3 text-center"
               >
-                Register
+              Ro'yxatdan o'tish
               </button>
               <p class="text-sm font-light text-gray-200 dark:text-gray-400">
-                Do you have an account?
+                Hisobingiz bormi?
                 <span
                   @click="$router.push('/login')"
                   href="#"
                   class="font-medium cursor-pointer text-blue-600 hover:underline dark:text-blue-500"
-                  >Log in</span
+                  >Tizimga kirish</span
                 >
               </p>
             </form>
@@ -114,33 +109,52 @@
 </template>
 
 <script setup>
-import { reactive } from "vue";
-import {useRouter} from "vue-router"
+import { onBeforeMount, reactive } from "vue";
+import { useOtpStore } from "../stores/otp";
+import { useRouter } from "vue-router";
 import axios from "../services/axios";
 import { useNotificationStore } from "../stores/notification";
 
+const otpStore = useOtpStore();
 const router = useRouter();
 const notification = useNotificationStore();
+const store = reactive({
+  checking: 1,
+});
+
 const form = reactive({
   username: "",
-  phone: "",
   email: "",
   password: "",
+  secret_key: "",
 });
 
 // ----------------- axios --------------------
 
 const Register = () => {
+  const data = {
+    phone: otpStore.phone,
+    ...form,
+  };
   axios
-    .post("/admin", form)
+    .post("/admin/register", data)
     .then((res) => {
       notification.success("Successfully registered");
-      router.push("/login")
+      router.push("/login");
     })
     .catch((error) => {
       notification.warning(error.response.data.message);
     });
 };
+
+onBeforeMount(() => {
+  console.log(otpStore.state.otp);
+  if (otpStore.state.phone == "") {
+    router.push("/check_phone");
+  } else if (otpStore.state.is_true == false) {
+    router.push("/otp_verification");
+  }
+});
 </script>
 
 <style lang="scss" scoped></style>

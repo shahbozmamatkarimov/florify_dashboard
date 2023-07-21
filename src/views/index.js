@@ -7,6 +7,8 @@ import LoginView from './Login.vue'
 import RegisterView from './Register.vue'
 import Settings from './admin/Settings.vue'
 import Reset from './admin/ResetPassword.vue'
+import Phone from './admin/CheckingPhone.vue'
+import Otp from './admin/CheckingOtp.vue'
 
 export {
     AdminView,
@@ -18,4 +20,6 @@ export {
     RegisterView,
     Settings,
     Reset,
+    Phone,
+    Otp,
 }

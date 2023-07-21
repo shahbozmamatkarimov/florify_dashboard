@@ -1,5 +1,5 @@
 <template>
-  <main  class="bg-[#203843]">
+  <main class="bg-[#203843]">
     <section class="overflow-hidden overflow-y-auto max-h-screen">
       <div
         class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0"
@@ -17,14 +17,18 @@
             <h1
               class="text-xl font-bold leading-tight tracking-tight text-white md:text-2xl dark:text-white"
             >
-              Log in to your account
+              Hisobingizga kiring
             </h1>
-            <form @submit.prevent="Login" class="space-y-4 md:space-y-6" action="#">
+            <form
+              @submit.prevent="Login"
+              class="space-y-4 md:space-y-6"
+              action="#"
+            >
               <div>
                 <label
                   for="email"
                   class="block mb-2 text-sm font-medium text-white dark:text-white"
-                  >Your email</label
+                  >Email</label
                 >
                 <input
                   v-model="form.email"
@@ -40,7 +44,7 @@
                 <label
                   for="password"
                   class="block mb-2 text-sm font-medium text-white dark:text-white"
-                  >Password</label
+                  >Parol</label
                 >
                 <input
                   v-model="form.password"
@@ -55,21 +59,21 @@
               <a
                 href="#"
                 class="text-sm inline-block font-medium text-blue-600 hover:underline dark:text-blue-500"
-                >Forgot password?</a
+                >Parolni unutdingizmi?</a
               >
               <button
                 type="submit"
                 class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:outline-none font-medium rounded-lg text-sm px-5 py-3 text-center"
               >
-                Log in
+                Tizimga kirish
               </button>
               <p class="text-sm font-light text-gray-200 dark:text-gray-400">
-                Don’t have an account yet?
+                Hali hisobingiz yo'qmi?
                 <span
                   @click="$router.push('/register')"
                   href="#"
                   class="font-medium cursor-pointer text-blue-600 hover:underline dark:text-blue-500"
-                  >Register</span
+                  >Ro'yxatdan o'tish</span
                 >
               </p>
             </form>

@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { AdminView, AdminDashboardView, AdminInboxView, AdminProfileView, BillingView, LoginView, RegisterView, Settings, Reset } from '../views'
+import { AdminView, AdminDashboardView, AdminInboxView, AdminProfileView, BillingView, LoginView, RegisterView, Settings, Reset, Phone, Otp } from '../views'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -50,7 +50,17 @@ const router = createRouter({
       path: '/reset_password',
       name: 'reset_password',
       component: Reset,
-    },    
+    },  
+    {
+      path: '/check_phone',
+      name: 'check_phone',
+      component: Phone,
+    },
+    {
+      path: '/otp_verification',
+      name: 'otp_verification',
+      component: Otp,
+    },     
     // {
     //   path: '/:pathMatch(.*)*',
     //   name: 'error',
